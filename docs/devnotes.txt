@@ -1,0 +1,5 @@
+KineticJS
+=========
+
+http://www.html5canvastutorials.com/kineticjs/html5-canvas-kineticjs-sprite-tutorial/
+

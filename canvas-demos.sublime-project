@@ -1,0 +1,24 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.lock",
+				"*.tmproj*"
+			],
+			"folder_exclude_patterns":
+			[
+				"tmp",
+				"vendor",
+				"*.xcworkspace",
+				"*.esproj",
+				".meteor",
+				// "packages",
+				"*/.build",
+			],
+			"follow_symlinks": true,
+			"path": "."
+		}
+	]
+}
