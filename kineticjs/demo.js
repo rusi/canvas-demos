@@ -1,18 +1,7 @@
 
+includeJS('kineticjs/kinetic-v5.1.0.min.js');
+
 'use strict';
-
-var loading = function() {
-	var canvas = document.getElementById('canvas');
-	var context = canvas.getContext('2d');
-
-	var x = canvas.width / 2;
-	var y = canvas.height / 2;
-
-	context.font = '30pt Calibri';
-	context.textAlign = 'center';
-	context.textBaseling = 'middle';
-	context.fillText('Loading...', x, y);
-}();
 
 var tiles = {};
 var stage = null;
@@ -349,11 +338,11 @@ var loadImages = function(sources, callback)
 	}
 };
 
-var sources = {
-	tiles: './assets/tiles_pegman.png',
-	marker: './assets/marker.png',
-	pegman: './assets/pegman.png',
-};
-setTimeout(function() {
+var initDemo = function() {
+	var sources = {
+		tiles: './assets/tiles_pegman.png',
+		marker: './assets/marker.png',
+		pegman: './assets/pegman.png',
+	};
 	loadImages(sources, initStage);
-}, 1500);
+}

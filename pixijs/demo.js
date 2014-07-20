@@ -1,4 +1,5 @@
 
+includeJS('pixijs/pixi.js');
 
 initDemo = function() {
 	stage = new PIXI.Stage(0xF1EEE7);

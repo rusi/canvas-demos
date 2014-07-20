@@ -43,7 +43,9 @@ var resetProgram = function() {
 	Pegman.reset();
 }
 
-window.onload = function(e){
+var init = function(){
 	Maze.bindClick('runButton', runProgram);
 	Maze.bindClick('resetButton', resetProgram);
+
+	initDemo();
 };

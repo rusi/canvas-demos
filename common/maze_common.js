@@ -281,7 +281,7 @@ var drawMaze = function() {
 				normalize(x, y + 1) +  // South.
 				normalize(x - 1, y);   // East.
 			// Draw the tile.
-			if (!tiles[tileId])
+			if (_.indexOf(_.keys(Maze.tile_SHAPES), tileId) < 0)
 			{
 				// Empty square.  Use null0 for large areas, with null1-4 for borders.
 				// Add some randomness to avoid large empty spaces.
