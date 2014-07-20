@@ -14,6 +14,13 @@ body {
 	border: 1px solid gray;
 }
 
+#codeButton {
+	display: none;
+}
+#linkButton {
+	display: none;
+}
+
 /* Buttons */
 button {
   margin: 5px;

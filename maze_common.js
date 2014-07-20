@@ -101,6 +101,18 @@ Maze.SquareType = {
   FINISH: 3
 };
 
+/**
+ * Constants for cardinal directions.  Subsequent code assumes these are
+ * in the range 0..3 and that opposites have an absolute difference of 2.
+ * @enum {number}
+ */
+Maze.DirectionType = {
+  NORTH: 0,
+  EAST: 1,
+  SOUTH: 2,
+  WEST: 3
+};
+
 // Map each possible shape to a sprite.
 // Input: Binary string representing Centre/North/West/South/East squares.
 // Output: [x, y] coordinates of each tile's sprite in tiles.png.
@@ -138,7 +150,7 @@ Maze.map = [
   [0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0],
   [0, 0, 2, 1, 3, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 1, 1, 1, 0, 0],
   [0, 0, 0, 0, 0, 0, 0]],
 // Level 2.
  [[0, 0, 0, 0, 0, 0, 0, 0],
@@ -290,4 +302,44 @@ var drawMaze = function() {
 			}
 		}
 	}
+};
+
+/**
+ * Keep the direction within 0-3, wrapping at both ends.
+ * @param {number} d Potentially out-of-bounds direction value.
+ * @return {number} Legal direction value.
+ */
+Maze.constrainDirection4 = function(d) {
+  d = Math.round(d) % 4;
+  if (d < 0) {
+    d += 4;
+  }
+  return d;
+};
+
+/**
+ * Keep the direction within 0-15, wrapping at both ends.
+ * @param {number} d Potentially out-of-bounds direction value.
+ * @return {number} Legal direction value.
+ */
+Maze.constrainDirection16 = function(d) {
+  d = Math.round(d) % 16;
+  if (d < 0) {
+    d += 16;
+  }
+  return d;
+};
+
+/**
+ * Bind a function to a button's click event.
+ * On touch enabled browsers, ontouchend is treated as equivalent to onclick.
+ * @param {!Element|string} el Button element or ID thereof.
+ * @param {!Function} func Event handler to bind.
+ */
+Maze.bindClick = function(el, func) {
+  if (typeof el == 'string') {
+    el = document.getElementById(el);
+  }
+  el.addEventListener('click', func, true);
+  el.addEventListener('touchend', func, true);
 };
