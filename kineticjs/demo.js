@@ -1,5 +1,7 @@
 
-loading = function() {
+'use strict';
+
+var loading = function() {
 	var canvas = document.getElementById('canvas');
 	var context = canvas.getContext('2d');
 
@@ -16,32 +18,8 @@ var tiles = {};
 var stage = null;
 var layer = null;
 
-var pegman = null;
 var marker = null;
 
-directionToString = function(direction)
-{
-	switch (direction)
-	{
-		case Maze.DirectionType.EAST:
-			return "EAST";
-		case Maze.DirectionType.WEST:
-			return "WEST";
-		case Maze.DirectionType.SOUTH:
-			return "SOUTH";
-		case Maze.DirectionType.NORTH:
-			return "NORTH";
-		default:
-			return "";
-	}
-}
-
-var getStepInDirection = {
-	EAST: [1, 0],
-	WEST: [-1, 0],
-	SOUTH: [0, 1],
-	NORTH: [0, -1],
-}
 
 var Pegman = {
 	posX: 0,
@@ -68,9 +46,9 @@ var Pegman = {
 
 			if (len > 1 && evt.newVal >= len-1)
 			{
-				//Pegman.pegmanSprite.animation(directionToString(Pegman.direction));
+				//Pegman.pegmanSprite.animation(Maze.directionToString(Pegman.direction));
 				Pegman.pegmanSprite.stop();
-				Pegman.pegmanSprite.animation(directionToString(Pegman.direction));
+				Pegman.pegmanSprite.animation(Maze.directionToString(Pegman.direction));
 				Pegman.pegmanSprite.start();
 				stage.draw();
 				Pegman.playNextAction();
@@ -86,12 +64,12 @@ var Pegman = {
 
 	setDirection: function(direction){
 		this.direction = Maze.constrainDirection4(direction);
-		this.pegmanSprite.animation(directionToString(this.direction));
+		this.pegmanSprite.animation(Maze.directionToString(this.direction));
 		stage.draw();
 	},
 
 	moveForward: function(){
-		var step = getStepInDirection[directionToString(this.direction)];
+		var step = Maze.getStepInDirection[Maze.directionToString(this.direction)];
 		this.posX += step[0];
 		this.posY += step[1];
 		this.tween = new Kinetic.Tween({
@@ -102,7 +80,6 @@ var Pegman = {
 			duration: 1,
 			easing: Kinetic.Easings.EaseInOut,
 			onFinish: function() {
-				//Pegman.pegmanSprite.animation(directionToString(Pegman.direction));
 				Pegman.playNextAction();
 			},
 		}).play();
@@ -114,9 +91,9 @@ var Pegman = {
 		this.turnTo(Maze.constrainDirection4(this.direction - 1));
 	},
 	turnTo: function(newDirection) {
-		var d = directionToString(this.direction);
+		var d = Maze.directionToString(this.direction);
 		this.direction = newDirection;
-		d += "_" + directionToString(this.direction);
+		d += "_" + Maze.directionToString(this.direction);
 		this.pegmanSprite.animation(d);
 		this.pegmanSprite.start();
 	},
@@ -171,7 +148,7 @@ var Pegman = {
 	},
 };
 
-drawTileAt = function(tileId, x, y)
+var drawTileAt = function(tileId, x, y)
 {
 	//console.log(tileId);
 	var tile = tiles[tileId].clone();
@@ -182,7 +159,7 @@ drawTileAt = function(tileId, x, y)
 	layer.add(tile);
 }
 
-drawMarkerAt = function(coords)
+var drawMarkerAt = function(coords)
 {
 	marker.position({
 		x: coords.x * Maze.SQUARE_SIZE,
@@ -191,7 +168,7 @@ drawMarkerAt = function(coords)
 	layer.add(marker);
 }
 
-loadTiles = function(spriteSheet)
+var loadTiles = function(spriteSheet)
 {
 	_.each(Maze.tile_SHAPES, function(value, key)
 	{
@@ -215,7 +192,7 @@ loadTiles = function(spriteSheet)
 	// stage.draw(); //repaint the stage
 };
 
-loadMarker = function(spriteSheet)
+var loadMarker = function(spriteSheet)
 {
 	marker = new Kinetic.Image({
 		image: spriteSheet,
@@ -230,7 +207,7 @@ loadMarker = function(spriteSheet)
 
 // could implement Pegman as a set of tiles + rotation index (as originally implemented),
 // but want to test sprite animatinos here, which is why we setup each sequence as a separate animation.
-loadPegman = function(spriteSheet)
+var loadPegman = function(spriteSheet)
 {
 	var w = Maze.PEGMAN_WIDTH;
 	var h = Maze.PEGMAN_HEIGHT - 1;
@@ -318,7 +295,7 @@ loadPegman = function(spriteSheet)
 	return pegman;
 }
 
-initBackground = function()
+var initBackground = function()
 {
 	var background = new Kinetic.Rect({
 		width: 400,
@@ -330,7 +307,7 @@ initBackground = function()
 	layer.add(background);
 }
 
-initStage = function(images)
+var initStage = function(images)
 {
 	stage = new Kinetic.Stage({
 		container: 'canvasContainer',
@@ -351,54 +328,9 @@ initStage = function(images)
 	Pegman.draw();
 
 	stage.add(layer);
-
-	Maze.bindClick('runButton', runProgram);
-	Maze.bindClick('resetButton', resetProgram);
 };
 
-runProgram = function() {
-	var runButton = document.getElementById('runButton');
-	var resetButton = document.getElementById('resetButton');
-	// Ensure that Reset button is at least as wide as Run button.
-	if (!resetButton.style.minWidth) {
-		resetButton.style.minWidth = runButton.offsetWidth + 'px';
-	}
-	runButton.style.display = 'none';
-	resetButton.style.display = 'inline';
-	// Prevent double-clicks or double-taps.
-	resetButton.disabled = false;
-
-	Pegman.nextAction("forward");
-	Pegman.nextAction("forward");
-	Pegman.nextAction("left");
-	Pegman.nextAction("forward");
-	Pegman.nextAction("left");
-	Pegman.nextAction("forward");
-	Pegman.nextAction("left");
-	Pegman.nextAction("forward");
-
-	Pegman.nextAction("right");
-	Pegman.nextAction("forward");
-	Pegman.nextAction("right");
-	Pegman.nextAction("forward");
-	Pegman.nextAction("right");
-	Pegman.nextAction("forward");
-	Pegman.nextAction("right");
-	Pegman.nextAction("forward");
-	Pegman.nextAction("left");
-	Pegman.play();
-};
-resetProgram = function() {
-	var runButton = document.getElementById('runButton');
-	runButton.style.display = 'inline';
-	document.getElementById('resetButton').style.display = 'none';
-	// Prevent double-clicks or double-taps.
-	runButton.disabled = false;
-
-	Pegman.reset();
-}
-
-loadImages = function(sources, callback)
+var loadImages = function(sources, callback)
 {
 	var images = {};
 	var loadedImages = 0;

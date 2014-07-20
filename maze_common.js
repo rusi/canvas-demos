@@ -304,6 +304,30 @@ var drawMaze = function() {
 	}
 };
 
+Maze.directionToString = function(direction)
+{
+	switch (direction)
+	{
+		case Maze.DirectionType.EAST:
+			return "EAST";
+		case Maze.DirectionType.WEST:
+			return "WEST";
+		case Maze.DirectionType.SOUTH:
+			return "SOUTH";
+		case Maze.DirectionType.NORTH:
+			return "NORTH";
+		default:
+			return "";
+	}
+};
+
+Maze.getStepInDirection = {
+	EAST: [1, 0],
+	WEST: [-1, 0],
+	SOUTH: [0, 1],
+	NORTH: [0, -1],
+};
+
 /**
  * Keep the direction within 0-3, wrapping at both ends.
  * @param {number} d Potentially out-of-bounds direction value.
