@@ -6,3 +6,11 @@ http://www.html5canvastutorials.com/kineticjs/html5-canvas-kineticjs-sprite-tuto
 
 http://ramkulkarni.com/blog/sprite-animation-in-html5-canvas-with-kineticjs/
 
+PixiJS
+======
+Building a Parallax Scroller with Pixi.js: Part 1
+   http://www.yeahbutisitflash.com/?p=5226
+
+Building a Parallax Scroller with Pixi.js: Part 2
+   http://www.yeahbutisitflash.com/?p=5666
+

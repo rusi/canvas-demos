@@ -350,9 +350,10 @@ var loadImages = function(sources, callback)
 };
 
 var sources = {
-	tiles: '../assets/tiles_pegman.png',
-	marker: '../assets/marker.png',
-	pegman: '../assets/pegman.png',
+	tiles: './assets/tiles_pegman.png',
+	marker: './assets/marker.png',
+	pegman: './assets/pegman.png',
 };
-loadImages(sources, initStage);
-
+setTimeout(function() {
+	loadImages(sources, initStage);
+}, 1500);
