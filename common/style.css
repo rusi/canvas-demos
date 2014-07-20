@@ -72,7 +72,7 @@ button.notext {
 .icon21 {
   height: 21px;
   width: 21px;
-  background-image: url(assets/icons.png);
+  background-image: url(../assets/icons.png);
 }
 .code {
   background-position: -21px 0px;

@@ -1,5 +1,8 @@
 KineticJS
 =========
+https://github.com/ericdrowell/KineticJS/wiki
 
 http://www.html5canvastutorials.com/kineticjs/html5-canvas-kineticjs-sprite-tutorial/
+
+http://ramkulkarni.com/blog/sprite-animation-in-html5-canvas-with-kineticjs/
 
