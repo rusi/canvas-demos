@@ -1,8 +1,10 @@
 Canvas Demos
 ============
 The purpose of this project is to create the same application using different HTML5 Canvas
-frameworks. This Maze demo is based on, and uses assets and code from Blocky's Maze:
+frameworks. The Maze demo is based on, and uses assets and code from Blockly's Maze:
     https://blockly-demo.appspot.com/static/apps/maze/index.html
+
+*You can compare 'demo.js' and 'pegman.js' for each of the projects to see the differences for yourself.*
 
 Impelementation exists for the following frameworks:
 * PhaserJS (game engine, uses Pixi for rendering) - http://phaser.io
@@ -30,17 +32,15 @@ The application does not USE any of:
 * Mouse & Keyboard events
 * Physics
 
-*You can compare 'demo.js' for each of the project to see the differences for yourself.*
-
 PhaserJS - game engine
 ======================
 * Tutorials - impressive collection of tutorials
   - http://examples.phaser.io - great set of examples / tutorials
+  - http://www.photonstorm.com/phaser/tutorial-making-your-first-phaser-game
   - http://gamemechanicexplorer.com
   - http://discoverphaser.com (book)
 * Documentation - rich set of guides
   - http://phaser.io/getting-started-js.php
-  - http://www.photonstorm.com/phaser/tutorial-making-your-first-phaser-game
   - http://docs.phaser.io/
 
 ### Pros

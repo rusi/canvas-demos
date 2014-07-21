@@ -20,4 +20,5 @@ function includeCSS(filename) {
 
 var framework = getStringParamFromUrl('framework', 'phaserjs');
 
+includeJS(framework + "/pegman.js");
 includeJS(framework + "/demo.js");
