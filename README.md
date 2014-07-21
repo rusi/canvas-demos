@@ -9,10 +9,12 @@ frameworks. The Maze demo is based on, and uses assets and code from Blockly's M
 Impelementation exists for the following frameworks:
 * PhaserJS (game engine, uses Pixi for rendering) - http://phaser.io
 * KineticJS (for interactive web graphics) - http://kineticjs.com
+
+(incomplete; not suitable or hard to use for this demo)
 * PixiJS (rendering engine; 2D WebGL+Canvas) - http://www.pixijs.com
+* PandaJS (game engine) - http://www.pandajs.net
 
 (not yet implemented)
-* PandaJS
 * EaselJS
 * FabricJS
 
@@ -21,6 +23,7 @@ Impelementation exists for the following frameworks:
   http://stackoverflow.com/questions/8938969/current-state-of-javascript-canvas-libraries
 * Another comparison between EaselJS, FabricJS, PaperJS, PixiJS:
   https://groups.google.com/forum/#!topic/flashcodersny/rU0-3zD7QIo
+* http://www.softr.li/blog/2012/06/20/which-html5-canvas-javascript-library-should-i-use
 
 The application uses the following features:
 * Images & Sprites
@@ -34,6 +37,7 @@ The application does not USE any of:
 
 PhaserJS - game engine
 ======================
+Phaser JS is a game engine build on top of Pixi JS.
 * Tutorials - impressive collection of tutorials
   - http://examples.phaser.io - great set of examples / tutorials
   - http://www.photonstorm.com/phaser/tutorial-making-your-first-phaser-game
@@ -44,6 +48,7 @@ PhaserJS - game engine
   - http://docs.phaser.io/
 
 ### Pros
+* Great documentation; lots of well organized examples.
 * Phaser.js IS a game development framework and as such, it makes it very easy to work with
   Sprites, Animations, Transitions.
 * Very simple to start with and allows you to create a full game within ~100 lines of code.
@@ -73,6 +78,23 @@ Kinetic JS - for interactive web graphics
 * Not able to flip sprite animations.
 * It is NOT a game engine and as such not suitable for complex games.
   Can be used to implement simple board games or similar.
+
+
+Panda JS - game engine
+======================
+Panda JS is another game engine build on top of Pixi JS.
+* Tutorials - very limited
+  - http://www.emanueleferonato.com/2014/03/05/look-at-panda-js-html5-game-engine-capabilities-with-a-working-game-prototype/
+* Small snippet of code showing differences between Phaser and Panda JS
+  - http://www.pandajs.net/snippets/9719395.html
+
+### Pros
+* Encourages good object-oriented design and implementation
+
+### Cons
+* Documentation is not very detailed; doesn't have a lot of examples nor tutorials.
+* Hard to figure out; doesn't provide a minified js file, which makes it hard to 'install' and use.
+* Seems to be designed for standalone HTML5 games.
 
 
 Pixi JS - rendering engine
