@@ -4,16 +4,16 @@ The purpose of this project is to create the same application using different HT
 frameworks. The Maze demo is based on, and uses assets and code from Blockly's Maze:
     https://blockly-demo.appspot.com/static/apps/maze/index.html
 
+You can see the demos for each of the frameworks here:
+* [PhaserJS](http://phaser.io) (game engine, uses Pixi for rendering) - http://rusi.github.io/canvas-demos/index.html
+* [EaselJS/CreateJS](http://www.createjs.com/#!/EaselJS) (html5 canvas library) - http://rusi.github.io/canvas-demos/index.html?framework=easeljs
+* [KineticJS](http://kineticjs.com) (for interactive web graphics) - http://rusi.github.io/canvas-demos/index.html?framework=kineticjs
+
 *You can compare 'demo.js' and 'pegman.js' for each of the projects to see the differences for yourself.*
 
-Impelementation exists for the following frameworks:
-* PhaserJS (game engine, uses Pixi for rendering) - http://phaser.io
-* EaselJS/CreateJS (html5 canvas library) - http://www.createjs.com/#!/EaselJS
-* KineticJS (for interactive web graphics) - http://kineticjs.com
-
 (incomplete; not suitable or hard to use for this demo)
-* PixiJS (rendering engine; 2D WebGL+Canvas) - http://www.pixijs.com
-* PandaJS (game engine) - http://www.pandajs.net
+* [PixiJS](http://www.pixijs.com) (rendering engine; 2D WebGL+Canvas)
+* [PandaJS](http://www.pandajs.net) (game engine)
 
 (not yet implemented)
 * FabricJS
@@ -139,6 +139,8 @@ this demo project.
 Tutorials:
 - Building a Parallax Scroller with Pixi.js: Part 1
     http://www.yeahbutisitflash.com/?p=5226
+- http://www.pixijs.com/resources/
+- http://www.emanueleferonato.com/2014/02/26/complete-html5-concentration-game-made-with-pixi-js/
 
 ### Pros
 * Provides an asset loader; encourages use of TexturePacker (http://www.codeandweb.com/texturepacker).
