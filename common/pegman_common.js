@@ -53,6 +53,7 @@ var Pegman = {
 		}
 
 		var action = this.pegmanActions.shift();
+		// console.log(action);
 		switch (action) {
 			case "forward":
 				var step = Maze.getStepInDirection[Maze.directionToString(this.direction)];

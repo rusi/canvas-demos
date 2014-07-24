@@ -8,6 +8,7 @@ frameworks. The Maze demo is based on, and uses assets and code from Blockly's M
 
 Impelementation exists for the following frameworks:
 * PhaserJS (game engine, uses Pixi for rendering) - http://phaser.io
+* EaselJS/CreateJS (html5 canvas library) - http://www.createjs.com/#!/EaselJS
 * KineticJS (for interactive web graphics) - http://kineticjs.com
 
 (incomplete; not suitable or hard to use for this demo)
@@ -15,7 +16,6 @@ Impelementation exists for the following frameworks:
 * PandaJS (game engine) - http://www.pandajs.net
 
 (not yet implemented)
-* EaselJS
 * FabricJS
 
 ### Other evaluations and comparisons:
@@ -38,7 +38,7 @@ The application does not USE any of:
 PhaserJS - game engine
 ======================
 Phaser JS is a game engine build on top of Pixi JS.
-* Tutorials - impressive collection of tutorials
+* Tutorials - impressive collection of tutorials and demos/examples
   - http://examples.phaser.io - great set of examples / tutorials
   - http://www.photonstorm.com/phaser/tutorial-making-your-first-phaser-game
   - http://gamemechanicexplorer.com
@@ -52,8 +52,36 @@ Phaser JS is a game engine build on top of Pixi JS.
 * Phaser.js IS a game development framework and as such, it makes it very easy to work with
   Sprites, Animations, Transitions.
 * Very simple to start with and allows you to create a full game within ~100 lines of code.
+* Easy to load and use tilesets.
 * Has several physics engines.
 
+
+EaselJS - HTML5 canvas library
+==============================
+EaselJS - a Flash-Like Interface for the HTML5 Canvas. It is part of the CreateJS suite of JavaScript
+libraries; (from "Using CreateJS - EaselJS"):
+>- EaselJS - Makes working with HTML5 canvas easy (http://www.createjs.com/#!/EaselJS)
+>- TweenJS - For tweening HTML5 and JavaScript properties (http://www.createjs.com/#!/TweenJS)
+>- SoundJS - Lets you easily work with HTML5 audio
+>- PreloadJS - Lets you manage and coordinate loading of assets
+
+* Documentation - good documentation with examples explaining API usage
+* Examples/Demos - good set of demos
+* Tutorials - very good set of tutorials (google search)
+  - http://www.createjs.com/tutorials/Getting%20Started/
+  - http://code.tutsplus.com/tutorials/using-createjs-easeljs--net-34840
+  - http://code.tutsplus.com/articles/getting-started-with-easeljs-a-flash-like-interface-for-the-html5-canvas--active-10382
+  - http://blogs.msdn.com/b/davrous/archive/2011/07/21/html5-gaming-animating-sprites-in-canvas-with-easeljs.aspx
+  - http://www.gamedev5.com/2013/06/tutorial-1-dragon-of-bosnia-basic-html.html
+  - http://blog.createjs.com/createjs-sandbox-code-snippets-and-demos/
+
+### Pros
+* Good documentation with examples; good set of tutorials and demos.
+* Handles SpriteSheets; easy to use/define animations and sprites.
+
+### Cons
+* Working with tilesets is a little tricky.
+* No physics engine; most commonly used with Box2D (http://sandbox.createjs.com/EaselJS_Box2dWeb/)
 
 Kinetic JS - for interactive web graphics
 =========================================
