@@ -5,18 +5,21 @@ frameworks. The Maze demo is based on, and uses assets and code from Blockly's M
     https://blockly-demo.appspot.com/static/apps/maze/index.html
 
 You can see the demos for each of the frameworks here:
-* [PhaserJS](http://phaser.io) (game engine, uses Pixi for rendering) - http://rusi.github.io/canvas-demos/index.html
-* [EaselJS/CreateJS](http://www.createjs.com/#!/EaselJS) (html5 canvas library) - http://rusi.github.io/canvas-demos/index.html?framework=easeljs
-* [KineticJS](http://kineticjs.com) (for interactive web graphics) - http://rusi.github.io/canvas-demos/index.html?framework=kineticjs
+* [PhaserJS](http://phaser.io) (game engine, uses Pixi for rendering)
+  - http://rusi.github.io/canvas-demos/index.html
+* [EaselJS/CreateJS](http://www.createjs.com/#!/EaselJS) (html5 canvas library)
+  - http://rusi.github.io/canvas-demos/index.html?framework=easeljs
+* [KineticJS](http://kineticjs.com) (for interactive web graphics)
+  - http://rusi.github.io/canvas-demos/index.html?framework=kineticjs
 
 *You can compare 'demo.js' and 'pegman.js' for each of the projects to see the differences for yourself.*
 
 (incomplete; not suitable or hard to use for this demo)
+* [FabricJS](http://fabricjs.com) (simple HTML5 canvas library; for interactive graphics)
+  - http://rusi.github.io/canvas-demos/index.html?framework=fabricjs
+  - rendered the tilemap but anything else seem to require a lot more work compared to the other frameworks
 * [PixiJS](http://www.pixijs.com) (rendering engine; 2D WebGL+Canvas)
 * [PandaJS](http://www.pandajs.net) (game engine)
-
-(not yet implemented)
-* FabricJS
 
 ### Other evaluations and comparisons:
 * The following StackOverflow link has an evaluation of FabricJS and KineticJS:
@@ -107,6 +110,19 @@ Kinetic JS - for interactive web graphics
 * It is NOT a game engine and as such not suitable for complex games.
   Can be used to implement simple board games or similar.
 
+Fabric JS - simple HTML5 canvas library
+=======================================
+* Tutorials - 4-part tutorial exists which is helpful in learning how to use FabricJS
+  (http://fabricjs.com/articles/).
+* Demos - good set of demos exist which show Fabric's functionality and strengths.
+
+### Pros
+* Documentation is available, but doesn't have example usage.
+* FabricJS can be used to create a drawing tool, allowing users to draw and manipulate objects.
+
+### Cons
+* Does not provide image/asset loader.
+* It is NOT a game engine; doesn't provide facilities to deal with tiles, animations, transitions, etc.
 
 Panda JS - game engine
 ======================
