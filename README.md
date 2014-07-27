@@ -94,6 +94,8 @@ Kinetic JS - for interactive web graphics
   basic examples.
 * User base & StackOverflow - it seems that there is a large user base and a lot of questions
   are covered and answered in StackOverflow.
+* It is NOT a game engine and as such not suitable for complex games.
+  Can be used to implement simple board games or similar.
 
 ### Pros
 * Easy and simple to use.
@@ -107,14 +109,13 @@ Kinetic JS - for interactive web graphics
   animations; there are also no events when the animation ends, so you have to manually manage 
   transitions, based on the current frameIndex.
 * Not able to flip sprite animations.
-* It is NOT a game engine and as such not suitable for complex games.
-  Can be used to implement simple board games or similar.
 
-Fabric JS - simple HTML5 canvas library
+Fabric JS - simple Canvas library
 =======================================
 * Tutorials - 4-part tutorial exists which is helpful in learning how to use FabricJS
   (http://fabricjs.com/articles/).
 * Demos - good set of demos exist which show Fabric's functionality and strengths.
+* It is NOT a game engine.
 
 ### Pros
 * Documentation is available, but doesn't have example usage.
@@ -122,7 +123,7 @@ Fabric JS - simple HTML5 canvas library
 
 ### Cons
 * Does not provide image/asset loader.
-* It is NOT a game engine; doesn't provide facilities to deal with tiles, animations, transitions, etc.
+* Doesn't provide facilities to deal with tiles, animations, transitions, etc.
 
 Panda JS - game engine
 ======================
@@ -131,6 +132,7 @@ Panda JS is another game engine build on top of Pixi JS.
   - http://www.emanueleferonato.com/2014/03/05/look-at-panda-js-html5-game-engine-capabilities-with-a-working-game-prototype/
 * Small snippet of code showing differences between Phaser and Panda JS
   - http://www.pandajs.net/snippets/9719395.html
+* Seems to be designed for standalone HTML5 games.
 
 ### Pros
 * Encourages good object-oriented design and implementation
@@ -138,7 +140,6 @@ Panda JS is another game engine build on top of Pixi JS.
 ### Cons
 * Documentation is not very detailed; doesn't have a lot of examples nor tutorials.
 * Hard to figure out; doesn't provide a minified js file, which makes it hard to 'install' and use.
-* Seems to be designed for standalone HTML5 games.
 
 
 Pixi JS - rendering engine
